@@ -12,6 +12,8 @@ const frc = require('./commands/frc.js');
 const school = require('./commands/school.js');
 const meme = require('./commands/meme.js')
 
+const spaceX = require('./commands/spacexapi.js')
+
 const prefix = '>';
 let version = '2.0'
 
@@ -74,6 +76,10 @@ bot.on('message', message =>{
 
         case 'meme':
             meme.meme(message.channel);
+        break;
+
+        case 'spacex':
+            spaceX.spaceX(args, message.channel);
         break;
 
         //the command first arguement for any role assigning
