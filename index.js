@@ -3,7 +3,8 @@ try {
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const Attachment = new Discord.Attachment();
-const token = 'NjA0NTM3OTY2NjQ3NDQzNDU4.XTvZ5Q.Votfx699Fwt4oRGReYpzRHH8XsE'
+const Token = require('token.js')
+const token = Token.token;
 //required command modules
 const help = require('./commands/help.js');
 const ping = require('./commands/pong.js');
