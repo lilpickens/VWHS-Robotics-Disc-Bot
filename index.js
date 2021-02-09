@@ -3,14 +3,18 @@ try {
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const Attachment = new Discord.Attachment();
-const token = 'you cant have my token lol'
+const Token = require('token.js')
+const token = Token.token;
 //required command modules
 const help = require('./commands/help.js');
 const ping = require('./commands/pong.js');
 const ftc = require('./commands/ftc.js');
 const frc = require('./commands/frc.js');
 const school = require('./commands/school.js');
-const meme = require('./commands/meme.js')
+const meme = require('./commands/meme.js');
+const stats = require('./commands/ftcstatsapi.js');
+
+const spaceX = require('./commands/spacexapi.js');
 
 const prefix = '>';
 let version = '2.0'
@@ -74,6 +78,14 @@ bot.on('message', message =>{
 
         case 'meme':
             meme.meme(message.channel);
+        break;
+
+        case 'spacex':
+            spaceX.spaceX(args, message.channel);
+        break;
+
+        case 'stats':
+            stats.stats(args, message.channel);
         break;
 
         //the command first arguement for any role assigning
